@@ -20,6 +20,7 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 
 public class movie {
+	//mapper function
 	public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
 		private final static IntWritable one = new IntWritable(1);
 		
@@ -30,6 +31,7 @@ public class movie {
 			output.collect(new Text(Tokens[4]),one);}
 			
 		}
+	//reducer function
 	public static class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
 		public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
 			int count= 0;
