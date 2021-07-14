@@ -11,7 +11,7 @@ db.movie.aggregate({$group:{_id:"$genre",number_of_movies:{$sum:1}}})
 ```
 
 ```{mongo}
-db.movie.aggregate({$match:{referable:false}},{$group:{_id:"$genre",total_positive_fed:{$sum:1}}})
+db.movie.aggregate({$match:{referable:false}},{$group:{_id:"$genre",number_of_movies:{$sum:1}}})
 ```
 
 
